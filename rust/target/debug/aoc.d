@@ -1,1 +1,0 @@
-/home/marko/Documents/code/tutorials/aoc-2021/rust/target/debug/aoc: /home/marko/Documents/code/tutorials/aoc-2021/rust/src/day1.rs /home/marko/Documents/code/tutorials/aoc-2021/rust/src/lib.rs /home/marko/Documents/code/tutorials/aoc-2021/rust/src/main.rs
