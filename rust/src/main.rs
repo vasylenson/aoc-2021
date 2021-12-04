@@ -1,4 +1,3 @@
-use aoc::day1;
 fn main() {
-    println!("{}", day1::solution_a());
+    println!("{}", aoc::day2::solution_a());
 }
