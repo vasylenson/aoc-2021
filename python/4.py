@@ -24,19 +24,24 @@ def score(board, last_move):
     # printboard(board)
 
 for move in moves:
-    remaining = [(ib, b) for ib, b in enumerate(boards) if b != None]
-    for ib, board in remaining:
+    for ib, board in enumerate(boards):
+        if boards == None:
+            continue
         for i, n in enumerate(board):
-            if move == n:
-                board[i] = None
-                row = i // 5
-                col = i % 5
-                if all(num == None for num in board[row * 5 : (row + 1) * 5]):
-                    score(board, move)
-                    boards[ib] = None
-                if all(num == None for num in board[col::5]):
-                    score(board, move)
-                    boards[ib] = None
+            if move != n:
+                continue
+
+            board[i] = None
+            row = i // 5
+            col = i % 5
+            
+            if any(num != None for num in board[row * 5 : (row + 1) * 5]):
+                continue
+            if any(num != None for num in board[col::5]):
+                continue
+
+            score(board, move)
+            boards[ib] = None
 
 first_board, first_score = winners[0]
 last_board, last_score = winners[-1]
